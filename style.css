@@ -35,7 +35,6 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -45,6 +44,9 @@ body {
   line-height: 1.7;
   font-size: 17px;
   overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
 a {
@@ -315,6 +317,10 @@ a {
 .section {
   padding: 100px 0;
   scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-alt {
@@ -781,6 +787,10 @@ a {
 .cta-section {
   padding: 80px 0;
   scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cta-box {
@@ -945,7 +955,6 @@ a {
 .footer {
   border-top: 1px solid var(--border);
   padding: 40px 0;
-  scroll-snap-align: end;
 }
 
 .footer-inner {
@@ -986,6 +995,17 @@ a {
 
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
+  body {
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .section,
+  .cta-section {
+    min-height: auto;
+  }
+
   .nav-links a:not(.nav-github) {
     display: none;
   }
