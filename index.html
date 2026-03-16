@@ -9,15 +9,25 @@
   <meta property="og:title" content="OpenAgentic — 给你的企业招一个永不离职的 AI 员工">
   <meta property="og:description" content="为中小企业提供私有化 AI 员工部署服务。7×24不休息、不请假、不离职。数据不出内网，行业微调模型，Docker 一键交付。">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar" id="top-bar">
+    <div class="top-bar-inner">
+      <span class="top-bar-text">&#x1f680; OpenAgentic 开源框架已上线 &mdash; 支持 100+ 大模型，MIT 协议</span>
+      <a href="https://github.com/openagentic-ai/open-agentic" target="_blank" class="top-bar-link">查看源码 &rarr;</a>
+      <button class="top-bar-close" id="top-bar-close" aria-label="关闭">&times;</button>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="logo-icon">&#9671;</span> OpenAgentic
+        <svg class="logo-icon" width="24" height="24" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(-45 50 50)" stroke-linecap="round"/><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(45 50 50)" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="url(#lg)"/></svg> OpenAgentic
       </a>
       <div class="nav-links">
         <a href="#pain-points">痛点</a>
@@ -378,7 +388,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="logo-icon">&#9671;</span> OpenAgentic
+          <svg class="logo-icon" width="24" height="24" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(-45 50 50)" stroke-linecap="round"/><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(45 50 50)" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="url(#lg)"/></svg> OpenAgentic
         </div>
         <div class="footer-links">
           <a href="https://github.com/openagentic-ai" target="_blank">GitHub</a>
@@ -394,6 +404,14 @@
     // Scroll container is body (has height:100vh + overflow-y:auto for snap)
     const scroller = document.body;
     const nav = document.getElementById('nav');
+
+    // Top bar close
+    const topBar = document.getElementById('top-bar');
+    const topBarClose = document.getElementById('top-bar-close');
+    topBarClose.addEventListener('click', () => {
+      topBar.classList.add('top-bar-hidden');
+      document.documentElement.style.setProperty('--top-bar-height', '0px');
+    });
 
     // Navbar scroll effect
     scroller.addEventListener('scroll', () => {
