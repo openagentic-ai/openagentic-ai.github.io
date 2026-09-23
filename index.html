@@ -1,410 +1,505 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenAgentic — 给你的企业招一个永不离职的 AI 员工</title>
-  <meta name="description" content="为中小企业提供私有化 AI 员工部署服务。7×24不休息、不请假、不离职。数据不出内网，行业微调模型，Docker 一键交付。">
-  <meta name="keywords" content="AI员工, AI智能体, 私有化部署, 企业AI, 大模型, Agent, 数据安全, 开源">
-  <meta property="og:title" content="OpenAgentic — 给你的企业招一个永不离职的 AI 员工">
-  <meta property="og:description" content="为中小企业提供私有化 AI 员工部署服务。7×24不休息、不请假、不离职。数据不出内网，行业微调模型，Docker 一键交付。">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Top Announcement Bar -->
-  <div class="top-bar" id="top-bar">
-    <div class="top-bar-inner">
-      <span class="top-bar-text">&#x1f680; OpenAgentic 开源框架已上线 &mdash; 支持 100+ 大模型，MIT 协议</span>
-      <a href="https://github.com/openagentic-ai/open-agentic" target="_blank" class="top-bar-link">查看源码 &rarr;</a>
-      <button class="top-bar-close" id="top-bar-close" aria-label="关闭">&times;</button>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <svg class="logo-icon" width="24" height="24" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(-45 50 50)" stroke-linecap="round"/><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(45 50 50)" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="url(#lg)"/></svg> OpenAgentic
-      </a>
-      <div class="nav-links">
-        <a href="#pain-points">痛点</a>
-        <a href="#solution">方案</a>
-        <a href="#scenarios">场景</a>
-        <a href="#how-it-works">原理</a>
-        <a href="https://github.com/openagentic-ai" target="_blank" class="nav-github">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="grid-lines"></div>
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge">不请假 &middot; 不离职 &middot; 7&times;24 在岗</div>
-      <h1 class="hero-title">
-        给你的企业招一个<br><span class="gradient-text">永不离职的 AI 员工</span>
-      </h1>
-      <p class="hero-desc">
-        别人的 AI 是工具，我们的 AI 是你的员工。懂你的业务、说你的行话、住在你的服务器里。不需要五险一金，不需要管理成本，7&times;24 小时随时待命。
-      </p>
-      <div class="hero-actions">
-        <a href="#scenarios" class="btn btn-primary">查看应用场景</a>
-        <a href="https://github.com/openagentic-ai" target="_blank" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          开源仓库
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">7&times;24</span>
-          <span class="stat-label">全年无休在岗</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">~80%</span>
-          <span class="stat-label">人力成本节省</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">0</span>
-          <span class="stat-label">数据外泄风险</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">100+</span>
-          <span class="stat-label">大模型可选</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pain Points -->
-  <section class="section" id="pain-points">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">招人难题</span>
-        <h2 class="section-title">你需要的不是 AI 工具，是 AI 员工</h2>
-        <p class="section-desc">工具需要人来操作，员工能独立完成任务</p>
-      </div>
-      <div class="pain-grid">
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-          </div>
-          <h3>招人贵、留人难</h3>
-          <p>客服、跟单、翻译岗位流动性大，培训成本高。招来就走，走了再招，周而复始。</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <h3>通用 AI 不是你的人</h3>
-          <p>ChatGPT 很强，但不了解你的产品、价格、流程。它是全世界的助手，不是你公司的员工。</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          </div>
-          <h3>数据交给别人不放心</h3>
-          <p>SaaS 平台要把客户信息、商业秘密传到别人的服务器。AI 员工的记忆不能存在别人家。</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M6 8h.01M9 8h.01"/></svg>
-          </div>
-          <h3>自己搞 AI 门槛太高</h3>
-          <p>中小企业没有 AI 团队，想自己训练部署？模型选型、数据清洗、运维全是坑。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solution -->
-  <section class="section section-alt" id="solution">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">入职流程</span>
-        <h2 class="section-title">AI 员工的入职四步曲</h2>
-        <p class="section-desc">从了解业务到正式上岗，我们帮你搞定全流程</p>
-      </div>
-      <div class="solution-grid">
-        <div class="solution-card">
-          <div class="solution-step">01</div>
-          <div class="solution-body">
-            <h3>了解公司业务</h3>
-            <p>就像新员工入职培训一样，AI 员工先学习你的业务流程、产品知识、常见问题。</p>
-          </div>
-        </div>
-        <div class="solution-card">
-          <div class="solution-step">02</div>
-          <div class="solution-body">
-            <h3>岗前专业培训</h3>
-            <p>用你的业务数据微调大模型，让 AI 员工说"你们公司的话"，而不是通用的 AI 味回答。</p>
-          </div>
-        </div>
-        <div class="solution-card">
-          <div class="solution-step">03</div>
-          <div class="solution-body">
-            <h3>入驻你的办公室</h3>
-            <p>AI 员工部署在你自己的服务器上，不是云端的 SaaS。数据从头到尾不出你的内网。</p>
-          </div>
-        </div>
-        <div class="solution-card">
-          <div class="solution-step">04</div>
-          <div class="solution-body">
-            <h3>越干越熟练</h3>
-            <p>每月增量学习，AI 员工越干越懂你的业务。能力升级、知识更新全覆盖。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scenarios -->
-  <section class="section" id="scenarios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">岗位职责</span>
-        <h2 class="section-title">AI 员工能胜任什么岗位</h2>
-        <p class="section-desc">这些岗位，一个 AI 员工就能搞定</p>
-      </div>
-      <div class="cases-grid">
-        <div class="case-card case-featured">
-          <div class="case-tag">明星员工</div>
-          <h3>跨境电商客服专员</h3>
-          <p>精通多国语言，7&times;24 小时在线。产品参数、物流时效、退换货政策张口就来。用你自己的商品数据培训上岗，比新人快 10 倍。</p>
-          <div class="case-metrics">
-            <span>响应时间 &lt; 3秒</span>
-            <span>人力节省 70%+</span>
-          </div>
-        </div>
-        <div class="case-card">
-          <div class="case-number">02</div>
-          <h3>外贸业务跟单员</h3>
-          <p>自动识别买家意图，根据产品库匹配报价方案，生成专业的英文回复邮件。7&times;24 不漏单，抢占时区差优势。</p>
-        </div>
-        <div class="case-card">
-          <div class="case-number">03</div>
-          <h3>门店前台接待员</h3>
-          <p>餐饮、酒店、诊所的 AI 前台。回答营业时间、预约排号、服务价格，接入微信/电话自动应答。</p>
-        </div>
-        <div class="case-card">
-          <div class="case-number">04</div>
-          <h3>内部培训讲师</h3>
-          <p>公司文档、SOP、制度规范全部学会。新员工有问必答、制度查询秒回、流程指引不厌其烦。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="section section-alt" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">技术架构</span>
-        <h2 class="section-title">开源驱动，安全可控</h2>
-        <p class="section-desc">基于 OpenAgentic 开源框架，100+ 大模型灵活切换</p>
-      </div>
-      <div class="arch-diagram">
-        <div class="arch-layer">
-          <div class="arch-box arch-box-app">
-            <div class="arch-box-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="arch-box-text">
-              <strong>用户端</strong>
-              <span>网页 &middot; 微信 &middot; 钉钉 &middot; API 对接</span>
-              <span>多渠道统一接入，客户从哪来，AI 就在哪</span>
-            </div>
-          </div>
-          <div class="arch-arrow">
-            <svg width="24" height="48" viewBox="0 0 24 48"><path d="M12 0v40M6 34l6 8 6-8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span class="arch-protocol">HTTPS / WebSocket</span>
-          </div>
-          <div class="arch-box arch-box-gateway">
-            <div class="arch-box-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div class="arch-box-text">
-              <strong>OpenAgentic 引擎</strong>
-              <span>Rust 高性能网关 &middot; Agent 调度 &middot; 记忆系统</span>
-              <span>Docker 容器化 &middot; 部署在你自己的服务器</span>
-            </div>
-          </div>
-          <div class="arch-arrow">
-            <svg width="24" height="48" viewBox="0 0 24 48"><path d="M12 0v40M6 34l6 8 6-8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span class="arch-protocol">行业微调模型</span>
-          </div>
-          <div class="arch-box arch-box-llm">
-            <div class="arch-box-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-            </div>
-            <div class="arch-box-text">
-              <strong>大模型层</strong>
-              <span>本地部署 (Ollama / vLLM) 或 API 调用</span>
-              <span>DeepSeek &middot; Qwen &middot; Llama &middot; 100+ 模型可选</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tech-highlights">
-        <div class="tech-hl">
-          <strong>Rust 后端</strong>
-          <span>17 个模块化 Crate，内存安全，16MB 极致体积</span>
-        </div>
-        <div class="tech-hl">
-          <strong>安全体系</strong>
-          <span>JWT + Argon2 认证、输入过滤、输出脱敏、审计日志</span>
-        </div>
-        <div class="tech-hl">
-          <strong>多 Agent</strong>
-          <span>任务自动分解，多个专业 Agent 协同工作</span>
-        </div>
-        <div class="tech-hl">
-          <strong>开源透明</strong>
-          <span>MIT 协议，代码完全开放，可审计可二次开发</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">合作模式</span>
-        <h2 class="section-title">简单透明的定价</h2>
-        <p class="section-desc">一次部署，长期受益</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-type">部署服务</div>
-          <div class="pricing-price">3-8<span>万元</span></div>
-          <div class="pricing-desc">一次性费用</div>
-          <ul class="pricing-features">
-            <li>业务需求分析与方案设计</li>
-            <li>数据清洗与结构化处理</li>
-            <li>行业大模型微调训练</li>
-            <li>Docker 容器化打包交付</li>
-            <li>系统集成与对接</li>
-            <li>上线培训与验收</li>
-          </ul>
-        </div>
-        <div class="pricing-card pricing-card-alt">
-          <div class="pricing-type">年度维护</div>
-          <div class="pricing-price">1-2<span>万元/年</span></div>
-          <div class="pricing-desc">持续优化</div>
-          <ul class="pricing-features">
-            <li>每月增量数据微调</li>
-            <li>模型效果持续优化</li>
-            <li>Bug 修复与安全更新</li>
-            <li>新功能迭代升级</li>
-            <li>技术支持与咨询</li>
-            <li>年度模型大版本更新</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CTA -->
-  <section class="section cta-section">
-    <div class="container">
-      <div class="cta-box">
-        <h2>给你的团队加一个永不离职的新成员</h2>
-        <p>无论你是跨境电商、外贸工厂还是本地服务商，我们都能帮你"招"到称职的 AI 员工。</p>
-        <div class="cta-actions">
-          <a href="https://github.com/openagentic-ai" target="_blank" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            查看开源代码
-          </a>
-          <a href="https://github.com/openagentic-ai" target="_blank" class="btn btn-secondary">了解更多</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <svg class="logo-icon" width="24" height="24" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(-45 50 50)" stroke-linecap="round"/><ellipse cx="50" cy="50" rx="38" ry="16" stroke="url(#lg)" stroke-width="5.5" transform="rotate(45 50 50)" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="url(#lg)"/></svg> OpenAgentic
-        </div>
-        <div class="footer-links">
-          <a href="https://github.com/openagentic-ai" target="_blank">GitHub</a>
-        </div>
-        <div class="footer-copy">
-          &copy; 2026 OpenAgentic. Open source under MIT License.
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Scroll container is body (has height:100vh + overflow-y:auto for snap)
-    const scroller = document.body;
-    const nav = document.getElementById('nav');
-
-    // Top bar close
-    const topBar = document.getElementById('top-bar');
-    const topBarClose = document.getElementById('top-bar-close');
-    topBarClose.addEventListener('click', () => {
-      topBar.classList.add('top-bar-hidden');
-      document.documentElement.style.setProperty('--top-bar-height', '0px');
-    });
-
-    // Navbar scroll effect
-    scroller.addEventListener('scroll', () => {
-      nav.classList.toggle('nav-scrolled', scroller.scrollTop > 50);
-    }, { passive: true });
-
-    // Smooth scroll for anchor links — temporarily disable snap during programmatic scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (!target) return;
-        // Disable snap so smooth scroll isn't hijacked
-        scroller.style.scrollSnapType = 'none';
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Re-enable snap after scroll completes
-        let timer;
-        const onScroll = () => {
-          clearTimeout(timer);
-          timer = setTimeout(() => {
-            scroller.style.scrollSnapType = '';
-            scroller.removeEventListener('scroll', onScroll);
-          }, 100);
-        };
-        scroller.addEventListener('scroll', onScroll, { passive: true });
-      });
-    });
-
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      }),
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-    document.querySelectorAll('.feature-card, .pain-card, .case-card, .solution-card, .tech-card, .arch-box, .pricing-card').forEach(
-      el => observer.observe(el)
-    );
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#f4f4ec" name="theme-color"/>
+  <title>
+   OpenAgentic · 你的资料，你的模型，你的个人助手
+  </title>
+  <meta content="OpenAgentic 正在验证本地优先的个人 AI 助手：从笔记整理到带来源的行动简报，支持本地模型与自带 API key。" name="description"/>
+  <meta content="OpenAgentic · 本地优先的个人 AI 助手" property="og:title"/>
+  <meta content="你的资料，你的模型，你的下一步。探索一个真正融入个人工作流的开源助手。" property="og:description"/>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="site.js">
   </script>
-
-</body>
+ </head>
+ <body>
+  <header class="nav wrap">
+   <a class="brand" href="#home">
+    <img alt="" height="30" src="favicon.svg" width="30"/>
+    OpenAgentic
+    <span>
+     智子 AI
+    </span>
+   </a>
+   <nav aria-label="主导航">
+    <a href="#experience">
+     使用体验
+    </a>
+    <a href="#local">
+     模型选择
+    </a>
+    <a href="#progress">
+     验证进度
+    </a>
+   </nav>
+   <a class="nav-cta" href="https://github.com/openagentic-ai/open-agentic">
+    GitHub ↗
+   </a>
+  </header>
+  <main>
+   <section class="hero wrap" id="home">
+    <div class="hero-copy">
+     <div class="eyebrow">
+      <span class="dot">
+      </span>
+      LOCAL-FIRST PERSONAL AGENT
+     </div>
+     <h1>
+      你的资料。
+      <br/>
+      你的模型。
+      <br/>
+      <span>
+       你的下一步。
+      </span>
+     </h1>
+     <p class="lead">
+      一个围绕你工作的个人 AI 助手。
+      <br/>
+      从散落的笔记里理清待办，让想法走向行动。
+     </p>
+     <div class="actions">
+      <a class="button" href="#experience">
+       看看它如何工作
+       <span>
+        ↗
+       </span>
+      </a>
+      <a class="text-link" href="#progress">
+       了解当前进度 →
+      </a>
+     </div>
+     <p class="caption">
+      开源 · 本地优先 · 支持自带 API key
+      <span class="small-pill">
+       原型验证中
+      </span>
+     </p>
+    </div>
+    <div aria-label="个人简报产品体验示意" class="hero-visual">
+     <div class="orbit orbit-a">
+     </div>
+     <div class="orbit orbit-b">
+     </div>
+     <div class="visual-label">
+      A LITTLE LESS CHAOS.
+      <br/>
+      A LITTLE MORE CLARITY.
+     </div>
+     <div class="note note-a">
+      <span>
+       01 / 我的笔记
+      </span>
+      <strong>
+       周日前准备产品汇报
+      </strong>
+      <p>
+       演示设备 · 讲稿 · 试讲
+      </p>
+     </div>
+     <div class="note note-b">
+      <span>
+       02 / 我的偏好
+      </span>
+      <strong>
+       先说重点，保留来源。
+      </strong>
+     </div>
+     <div class="brief-card">
+      <div class="brief-top">
+       <span class="mini-logo">
+        ◎
+       </span>
+       <strong>
+        你的行动简报
+       </strong>
+       <span class="status-dot">
+       </span>
+      </div>
+      <p class="brief-sub">
+       把三份笔记，整理成清楚的下一步。
+      </p>
+      <div class="task">
+       <span class="task-box">
+       </span>
+       <div>
+        <strong>
+         确认设备与转接线
+        </strong>
+        <small>
+         周五前 · 本周安排.md
+        </small>
+       </div>
+       <span class="priority">
+        优先
+       </span>
+      </div>
+      <div class="task">
+       <span class="task-box">
+       </span>
+       <div>
+        <strong>
+         完成一次十分钟试讲
+        </strong>
+        <small>
+         周六上午 · 本周安排.md
+        </small>
+       </div>
+      </div>
+      <div class="task">
+       <span class="question">
+        ?
+       </span>
+       <div>
+        <strong>
+         现场网络还需要确认
+        </strong>
+        <small>
+         待确认 · 演示记录.md
+        </small>
+       </div>
+      </div>
+      <div class="brief-foot">
+       <span>
+        ↳ 每一项，都有来源。
+       </span>
+       <span>
+        本地保存
+       </span>
+      </div>
+     </div>
+     <div class="visual-footer">
+      <span class="dot">
+      </span>
+      界面示意 · 虚构示例资料
+     </div>
+    </div>
+   </section>
+   <div class="principles wrap">
+    <span>
+     为个人的长期使用而设计
+    </span>
+    <strong>
+     资料有边界
+    </strong>
+    <strong>
+     模型可选择
+    </strong>
+    <strong>
+     结果可追溯
+    </strong>
+   </div>
+   <section class="section wrap" id="experience">
+    <div class="section-heading">
+     <div>
+      <div class="eyebrow">
+       01 / FIRST USE CASE
+      </div>
+      <h2>
+       先把一件小事，
+       <br/>
+       完整地做好。
+      </h2>
+     </div>
+     <p>
+      第一个验证场景：个人笔记 → 待办简报。
+      <br/>
+      不需要先搭工作流，从一个授权文件夹开始。
+     </p>
+    </div>
+    <div class="experience-grid">
+     <div aria-label="体验步骤" class="steps" role="tablist">
+      <button aria-controls="step-panel" aria-selected="true" class="step active" data-step="0" id="tab-0" role="tab">
+       <span>
+        01
+       </span>
+       <div>
+        <h3>
+         放入你的笔记
+        </h3>
+        <p>
+         指定文件夹，授权读取 Markdown 和 TXT。
+        </p>
+       </div>
+       <b>
+        ↗
+       </b>
+      </button>
+      <button aria-controls="step-panel" aria-selected="false" class="step" data-step="1" id="tab-1" role="tab" tabindex="-1">
+       <span>
+        02
+       </span>
+       <div>
+        <h3>
+         告诉它你的偏好
+        </h3>
+        <p>
+         简短还是详细，先看什么，由你决定。
+        </p>
+       </div>
+       <b>
+        ↗
+       </b>
+      </button>
+      <button aria-controls="step-panel" aria-selected="false" class="step" data-step="2" id="tab-2" role="tab" tabindex="-1">
+       <span>
+        03
+       </span>
+       <div>
+        <h3>
+         带着来源，继续行动
+        </h3>
+        <p>
+         分清待办、已完成与待确认，结果留在本机。
+        </p>
+       </div>
+       <b>
+        ↗
+       </b>
+      </button>
+     </div>
+     <div aria-labelledby="tab-0" class="experience-panel" id="step-panel" role="tabpanel" tabindex="0">
+      <div class="panel-top">
+       <span>
+        PERSONAL WORKSPACE
+       </span>
+       <span>
+        交互示意
+       </span>
+      </div>
+      <h3 id="panel-title">
+       一个文件夹，就是起点。
+      </h3>
+      <p id="panel-copy">
+       不用把所有资料都交出去。只读取你指定的笔记，不修改原文件。
+      </p>
+      <div class="file-list" id="panel-items">
+       <div>
+        ▤
+        <span>
+         本周安排.md
+        </span>
+        <small>
+         时间与计划
+        </small>
+       </div>
+       <div>
+        ▤
+        <span>
+         演示记录.md
+        </span>
+        <small>
+         进度与疑问
+        </small>
+       </div>
+       <div>
+        ▤
+        <span>
+         个人备忘.md
+        </span>
+        <small>
+         日常待办
+        </small>
+       </div>
+      </div>
+      <p class="panel-note">
+       此处展示交互流程，不会读取你的设备，也不会调用模型。
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="local-section" id="local">
+    <div class="wrap">
+     <div class="section-heading">
+      <div>
+       <div class="eyebrow">
+        02 / YOUR MODEL. YOUR CHOICE.
+       </div>
+       <h2>
+        本地优先。
+        <br/>
+        选择权始终在你。
+       </h2>
+      </div>
+      <p>
+       同一个助手，两种模型接入方式。
+       <br/>
+       让数据边界成为明确的选择。
+      </p>
+     </div>
+     <div class="model-grid">
+      <article class="model-card">
+       <span class="model-symbol">
+        ⌘
+       </span>
+       <span class="small-pill">
+        本地模型
+       </span>
+       <h3>
+        在自己的机器上思考。
+       </h3>
+       <p>
+        连接本机推理服务，用本地模型处理笔记。此演示的本地模式在调用失败时直接报错，不会自动转云端。
+       </p>
+       <div class="model-route">
+        你的笔记
+        <span>
+         →
+        </span>
+        本机模型
+        <span>
+         →
+        </span>
+        本地简报
+       </div>
+       <small>
+        效果与速度取决于模型和硬件；普通电脑适配仍待验证。
+       </small>
+      </article>
+      <article class="model-card">
+       <span class="model-symbol">
+        ↗
+       </span>
+       <span class="small-pill">
+        自带 API key
+       </span>
+       <h3>
+        也能用你选择的云端模型。
+       </h3>
+       <p>
+        保留 API 接入能力。演示支持 OpenAI 兼容端点，明确显示模型模式，生成前提醒资料将发送至所选服务。
+       </p>
+       <div class="model-route">
+        授权资料
+        <span>
+         →
+        </span>
+        所选 API
+        <span>
+         →
+        </span>
+        本地简报
+       </div>
+       <small>
+        API 模式涉及资料外发，费用及数据处理规则由供应商决定。
+       </small>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section wrap" id="progress">
+    <div class="section-heading">
+     <div>
+      <div class="eyebrow">
+       03 / BUILD IN THE OPEN
+      </div>
+      <h2>
+       把愿景和进度，
+       <br/>
+       放在同一张桌面上。
+      </h2>
+     </div>
+     <p>
+      先验证一个可重复的闭环，
+      <br/>
+      再逐步扩展个人助手的能力。
+     </p>
+    </div>
+    <div class="progress-grid">
+     <article>
+      <span class="progress-label">
+       已有底座
+      </span>
+      <h3>
+       从已有能力出发
+      </h3>
+      <ul>
+       <li>
+        模型接入与工具调用引擎
+       </li>
+       <li>
+        文件记忆与知识库模块
+       </li>
+       <li>
+        CLI、Web 与消息渠道
+       </li>
+      </ul>
+     </article>
+     <article class="featured">
+      <span class="progress-label">
+       本轮验证
+      </span>
+      <h3>
+       个人简报原型
+      </h3>
+      <ul>
+       <li>
+        指定文件夹读取与来源记录
+       </li>
+       <li>
+        偏好保存、简报持久化
+       </li>
+       <li>
+        本地模型与自带 API key 切换
+       </li>
+      </ul>
+      <a href="https://github.com/openagentic-ai/open-agentic">
+       查看项目与使用说明 ↗
+      </a>
+     </article>
+     <article>
+      <span class="progress-label planned">
+       后续探索
+      </span>
+      <h3>
+       在真实使用中生长
+      </h3>
+      <ul>
+       <li>
+        日历与更多个人应用接入
+       </li>
+       <li>
+        后台任务与中断恢复
+       </li>
+       <li>
+        同设备、同模型的效果对比
+       </li>
+      </ul>
+     </article>
+    </div>
+    <p class="honesty">
+     当前是验证原型，尚未证明相对成熟 Agent 的效率优势，也不承诺通用任务自主完成。
+    </p>
+   </section>
+   <section class="closing wrap">
+    <div>
+     <div class="eyebrow">
+      OPEN SOURCE. PERSONAL BY DESIGN.
+     </div>
+     <h2>
+      让 AI 更靠近你的生活，
+      <br/>
+      也让选择留在你手中。
+     </h2>
+    </div>
+    <a class="button" href="https://github.com/openagentic-ai/open-agentic">
+     一起探索 OpenAgentic ↗
+    </a>
+   </section>
+  </main>
+  <footer class="wrap">
+   <a class="brand" href="#home">
+    ◎ OpenAgentic
+   </a>
+   <span>
+    本地优先的个人 AI 助手 · 原型验证中
+   </span>
+   <a href="https://github.com/openagentic-ai/open-agentic/blob/main/LICENSE">
+    Apache-2.0
+   </a>
+  </footer>
+ </body>
 </html>
