@@ -11,7 +11,7 @@
   <meta content="OpenAgentic · 本地优先的个人 AI 助手" property="og:title"/>
   <meta content="你的资料，你的模型，你的下一步。探索一个真正融入个人工作流的开源助手。" property="og:description"/>
   <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="style.v10.css" rel="stylesheet"/>
+  <link href="style.v11.css" rel="stylesheet"/>
   <script defer="" src="site.js">
   </script>
  </head>
@@ -189,7 +189,7 @@
      结果可追溯
     </strong>
    </div>
-   <section class="section wrap" id="experience">
+   <section class="architecture-section" id="architecture"><div class="wrap"><div class="section-heading architecture-heading"><div><div class="eyebrow">ARCHITECTURE / ONE CORE, MANY ENTRANCES</div><h2>每个端，都共享同一个 Agent 底座。</h2></div><p>端只负责接入和呈现。记忆、检索、工作流、工具和模型路由统一运行在核心层。</p></div><div class="architecture-diagram" aria-label="OpenAgentic 多端共同底座架构"><div class="arch-row arch-endpoints"><span>飞书</span><span>企微</span><span>钉钉</span><span>Web</span><span>Android</span><span>小程序</span><span>桌面</span></div><div class="arch-arrow">↓</div><div class="arch-box arch-gateway"><strong>Adapter / Gateway</strong><small>接入协议 · 身份 · 事件 · 渲染</small></div><div class="arch-arrow">↓</div><div class="arch-box arch-application"><strong>统一 Agent Application</strong><small>一套会话、一套权限、一套任务状态</small></div><div class="arch-arrow">↓</div><div class="arch-row arch-capabilities"><span>Session</span><span>Memory</span><span>RAG</span><span>Workflow</span><span>Tools</span></div><div class="arch-arrow">↓</div><div class="arch-box arch-model"><span>Local Model</span><i>or</i><span>Cloud API</span></div></div><p class="architecture-note">能力属于底座，端只提供入口。新增一个端，不需要重写一套 Agent。</p></div></section><section class="section wrap" id="experience">
     <div class="section-heading">
      <div>
       <div class="eyebrow">
